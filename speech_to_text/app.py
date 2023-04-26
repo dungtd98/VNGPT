@@ -99,15 +99,12 @@ def transcribe_with_cut_file(audio, api_key):
             thread.join()
         main_result = read_redis_data(files_path)
         print(main_result)
-        # shutil.rmtree(f"audio/{name_folder}")
+        shutil.rmtree(f"audio/{name_folder}")
         return main_result
     except Exception as e:
         print(e)
-        # shutil.rmtree(f"audio/{name_folder}")
+        shutil.rmtree(f"audio/{name_folder}")
         return ""
-
-
-
 
 # feature audio using pytube and whisper AI
 def speech_to_text(link_youtube, fulltime, start_second, end_second, api_key):
